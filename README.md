@@ -1,4 +1,4 @@
-#Golang Neo4j test application
+# Golang Neo4j test application
 
 ## Installation
 Run ```docker-compose up -d```
