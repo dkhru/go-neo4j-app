@@ -1,0 +1,29 @@
+version: '3'
+services:
+  db:
+    image: neo4j:latest
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - ~/.dockerdata/neo4j/db:/data
+    networks:
+      - basic
+    environment:
+      - NEO4J_AUTH=neo4j/neo4j12345
+  app:
+    build: ./
+    container_name: neo4j_app
+    image: neo4j_app
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - 8088:8080
+    networks:
+      - basic
+    environment:
+      - NEO4J_URL=bolt://neo4j:neo4j12345@db:7687
+networks:
+  basic:
