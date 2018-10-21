@@ -1,6 +1,9 @@
 # Golang Neo4j test application
 
 ## Installation
+
+Clone repository ```git clone git@github.com:dkhru/go-neo4j-app.git```
+
 Run ```docker-compose up -d```
 
 Go to [http://localhost:7474](http://localhost:7474)
